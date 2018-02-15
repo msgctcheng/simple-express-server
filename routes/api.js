@@ -105,7 +105,7 @@ router.route("/status7").get((req, res) => {
   const response = {
     title: "When Percentage is 'null'",
     percentage: null,
-    status: "Loading bar unavailable...",
+    status: "Loading bar becomes a spinner...",
     log: [
       {
         id: "ID-1",
@@ -123,18 +123,7 @@ router.route("/status8").get((req, res) => {
   const response = {
     title: "When log is 'null'",
     percentage: 10,
-    status: "Log is 'null'...",
-    log: null,
-    done: false
-  };
-
-  res.json(response);
-});
-router.route("/status9").get((req, res) => {
-  const response = {
-    title: "When log is 'null'",
-    percentage: 60,
-    status: "Log is 'null'...",
+    status: "Nothing new will be added to log...",
     log: null,
     done: false
   };
