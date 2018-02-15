@@ -7,11 +7,12 @@ router.route("/status1").get((req, res) => {
     status: "Preparing...",
     log: [
       {
-        id: "ID-1",
+        id: "ID-2",
         line: "Retrieving files for upload.",
         updated_at: "02/15/2018"
       }
-    ]
+    ],
+    done: false
   };
 
   res.json(response);
@@ -24,16 +25,12 @@ router.route("/status2").get((req, res) => {
     status: "Starting Upload...",
     log: [
       {
-        id: "ID-1",
-        line: "Retrieving files for upload.",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-2",
+        id: "ID-3",
         line: "Uploading first data set....",
         updated_at: "02/15/2018"
       }
-    ]
+    ],
+    done: false
   };
 
   res.json(response);
@@ -46,21 +43,12 @@ router.route("/status3").get((req, res) => {
     status: "Uploading...",
     log: [
       {
-        id: "ID-1",
-        line: "Retrieving files for upload.",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-2",
-        line: "Uploading first data set...",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-3",
+        id: "ID-4",
         line: "Uploading second data set...",
-        updated_at: "02/06/2018"
+        updated_at: "02/15/2018"
       }
-    ]
+    ],
+    done: false
   };
 
   res.json(response);
@@ -73,26 +61,12 @@ router.route("/status4").get((req, res) => {
     status: "Loading...",
     log: [
       {
-        id: "ID-1",
-        line: "Retrieving files for upload.",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-2",
-        line: "Uploading first data set...",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-3",
-        line: "Uploading second data set...",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-4",
+        id: "ID-5",
         line: "Uploading third data set...",
         updated_at: "02/15/2018"
       }
-    ]
+    ],
+    done: false
   };
 
   res.json(response);
@@ -105,31 +79,12 @@ router.route("/status5").get((req, res) => {
     status: "Uploading Complete!",
     log: [
       {
-        id: "ID-1",
-        line: "Retrieving files for upload.",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-2",
-        line: "Uploading first data set...",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-3",
-        line: "Uploading second data set...",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-4",
-        line: "Uploading third data set...",
-        updated_at: "02/15/2018"
-      },
-      {
-        id: "ID-5",
+        id: "ID-6",
         line: "Finished Uploading...",
         updated_at: "02/15/2018"
       }
-    ]
+    ],
+    done: true
   };
   res.json(response);
 });
@@ -137,15 +92,10 @@ router.route("/status5").get((req, res) => {
 router.route("/status6").get((req, res) => {
   const response = {
     title: "When Log Values are 'null'",
-    percentage: 25,
+    percentage: 5,
     status: "Log Unavailable...",
-    log: [
-      {
-        id: null,
-        line: null,
-        updated_at: null
-      }
-    ]
+    log: null,
+    done: false
   };
 
   res.json(response);
@@ -162,7 +112,8 @@ router.route("/status7").get((req, res) => {
         line: "Percentage is null, loading bar unavailable.",
         updated_at: "02/15/2018"
       }
-    ]
+    ],
+    done: false
   };
 
   res.json(response);
@@ -170,10 +121,22 @@ router.route("/status7").get((req, res) => {
 
 router.route("/status8").get((req, res) => {
   const response = {
-    title: null,
-    percentage: null,
-    status: null,
-    log: []
+    title: "When log is 'null'",
+    percentage: 10,
+    status: "Log is 'null'...",
+    log: null,
+    done: false
+  };
+
+  res.json(response);
+});
+router.route("/status9").get((req, res) => {
+  const response = {
+    title: "When log is 'null'",
+    percentage: 60,
+    status: "Log is 'null'...",
+    log: null,
+    done: false
   };
 
   res.json(response);
